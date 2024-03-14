@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/core/utilis/constance.dart';
-import 'package:to_do_app/to_do/home_view.dart';
+import 'package:to_do_app/features/to_do_feature/presentation/views/home_view.dart';
 
 void main(List<String> args) {
   runApp(
