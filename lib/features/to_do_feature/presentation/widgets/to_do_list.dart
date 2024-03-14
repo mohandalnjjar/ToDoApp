@@ -7,11 +7,12 @@ class TODoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemCount: 6,
-        itemBuilder: (context, index) {
-          return const ToDoListItem(
-              isChecked: true, title: "this is me folan el folani");
-        });
+      physics: const BouncingScrollPhysics(),
+      itemCount: 6,
+      itemBuilder: (context, index) {
+        return const ToDoListItem(
+            isChecked: true, title: "this is me folan el folani");
+      },
+    );
   }
 }

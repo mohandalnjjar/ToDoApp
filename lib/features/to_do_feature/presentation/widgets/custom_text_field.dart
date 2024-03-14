@@ -11,7 +11,14 @@ class CustomTextFromField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-     
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Required Filed';
+        } else {
+          return null;
+        }
+      },
+      onSaved: onSaved,
       autofocus: true,
       textAlign: TextAlign.center,
       decoration: InputDecoration(

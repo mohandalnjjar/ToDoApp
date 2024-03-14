@@ -18,13 +18,14 @@ class ToDoHome extends StatelessWidget {
           showModalBottomSheet(
               isScrollControlled: true,
               context: context,
+              backgroundColor: Colors.transparent,
               builder: (context) {
                 return SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(
                       bottom: MediaQuery.of(context).viewInsets.bottom,
                     ),
-                    child: const ShowModalButtonSheet(),
+                    child: const AddToDoButtonSheet(),
                   ),
                 );
               });
