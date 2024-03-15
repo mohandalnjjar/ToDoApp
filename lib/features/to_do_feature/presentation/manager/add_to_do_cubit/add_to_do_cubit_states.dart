@@ -1,6 +1,6 @@
 abstract class AddToDoState {}
 
-class AddToDoInisial extends AddToDoState {}
+ class AddToDoInitial extends AddToDoState {}
 
 class AddToDoLoading extends AddToDoState {}
 
