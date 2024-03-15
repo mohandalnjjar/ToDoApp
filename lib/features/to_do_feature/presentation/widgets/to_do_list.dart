@@ -10,8 +10,11 @@ class TODoList extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: 6,
       itemBuilder: (context, index) {
-        return const ToDoListItem(
-            isChecked: true, title: "this is me folan el folani");
+        return ToDoListItem(
+          title: "this is me folan el folani",
+          isChecked: true,
+          onChange: (Value) {},
+        );
       },
     );
   }
