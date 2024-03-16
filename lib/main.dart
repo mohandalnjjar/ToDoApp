@@ -2,30 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:to_do_app/core/utilis/constance.dart';
+import 'package:to_do_app/core/utilis/simple_bloc_opserver.dart';
 import 'package:to_do_app/features/to_do_feature/data/models/to_do_model.dart';
-import 'package:to_do_app/features/to_do_feature/data/repos/add_to_do_repo_impl.dart';
-import 'package:to_do_app/features/to_do_feature/presentation/manager/add_to_do_cubit/add_to_do_cubit.dart';
+import 'package:to_do_app/features/to_do_feature/presentation/manager/fetch_to_do_cubit/fetch_to_do_cubit_cubit.dart';
 import 'package:to_do_app/features/to_do_feature/presentation/views/home_view.dart';
 
 void main(List<String> args) async {
   await Hive.initFlutter();
-  await Hive.openBox<ToDoModel>(kToDoBox);
+
+  Bloc.observer = BlocOpserver();
   Hive.registerAdapter(ToDoModelAdapter());
+
+  await Hive.openBox<ToDoModel>(kToDoBox);
   runApp(
-    const ToDoAPP(),
+    const TodoAPP(),
   );
 }
 
-class ToDoAPP extends StatelessWidget {
-  const ToDoAPP({super.key});
+class TodoAPP extends StatelessWidget {
+  const TodoAPP({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AddToDoCubit(addToDoImpl: AddToDoImpl()),
-        ),
+          create: (context) => FetchToDoCubit()..fetchToDoMehod(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

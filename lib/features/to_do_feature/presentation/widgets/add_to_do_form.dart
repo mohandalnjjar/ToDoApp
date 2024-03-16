@@ -49,6 +49,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
 
                 BlocProvider.of<AddToDoCubit>(context)
                     .addToDoMethod(ToDoModel(title: title!));
+
               } else {
                 autoValidate = AutovalidateMode.always;
                 setState(() {});

@@ -28,13 +28,12 @@ class ToDoViewBody extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            margin:
-                const EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 50),
+            margin: EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 50),
             decoration: BoxDecoration(
               color: kSecondPrimaryColor,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const TODoList(),
+            child: TODoList(),
           ),
         ),
       ],
