@@ -4,6 +4,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:to_do_app/core/utilis/constance.dart';
 import 'package:to_do_app/core/utilis/simple_bloc_opserver.dart';
 import 'package:to_do_app/features/to_do_feature/data/models/to_do_model.dart';
+import 'package:to_do_app/features/to_do_feature/presentation/manager/clear_to_do_cubit_cubit/clear_to_do_cubit_cubit.dart';
 import 'package:to_do_app/features/to_do_feature/presentation/manager/fetch_to_do_cubit/fetch_to_do_cubit_cubit.dart';
 import 'package:to_do_app/features/to_do_feature/presentation/views/home_view.dart';
 
@@ -28,6 +29,9 @@ class TodoAPP extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FetchToDoCubit()..fetchToDoMehod(),
+        ),
+        BlocProvider(
+          create: (context) => ClearToDoCubitCubit(),
         )
       ],
       child: MaterialApp(
