@@ -28,11 +28,11 @@ class ToDoViewBody extends StatelessWidget {
                 BlocProvider.of<FetchToDoCubit>(context).fetchToDoMehod();
               },
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 17),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 17),
               child: Text(
-                '0 tasks',
-                style: TextStyle(fontSize: 21),
+                '${BlocProvider.of<FetchToDoCubit>(context).toDoList!.length} tasks',
+                style: const TextStyle(fontSize: 21),
               ),
             ),
             Expanded(
@@ -43,7 +43,7 @@ class ToDoViewBody extends StatelessWidget {
                   color: kSecondPrimaryColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: TODoList(),
+                child: toDoList(),
               ),
             ),
           ],
